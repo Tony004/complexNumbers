@@ -34,7 +34,18 @@
                 $realPart = $this->a1 - $this->a2;
                 $imagPart = $this->b1 - $this->b2;
 
-                $result = $this->assembleResult($realPart, $imagPart);
+                if($realPart == 0 && $imagPart != 0){
+                    $result = $imagPart."i";
+                }
+                elseif($imagPart == 0 && $realPart != 0){
+                    $result = $realPart;
+                }
+                elseif($realPart == 0 && $imagPart == 0){
+                    $result = 0;
+                }
+                else{
+                    $result = $this->assembleResult($realPart, $imagPart);
+                }
 
                 return "Результат: $result";
             }
@@ -54,7 +65,12 @@
                 $realPart = ($a1*$a2 - $b1*$b2);
                 $imagPart = ($a1*$b2 + $a2*$b1);
 
-                $result = $this->assembleResult($realPart, $imagPart);
+                if($realPart == 0){
+                    $result = $imagPart."i";
+                }
+                else{
+                    $result = $this->assembleResult($realPart, $imagPart);
+                }
 
                 return "Результат: $result";
             }

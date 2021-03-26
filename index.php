@@ -34,9 +34,9 @@
         <input type="submit" id="btn" name="" value="Вычислить">
     </form>
 
+    <!-- Обработка введенных данных и вывод результата -->
     <p id="msg">
         <?php
-
             $real1 = $_GET["realNum1"];
             $real2 = $_GET["realNum2"];
             $im1 = $_GET["imNum1"];
@@ -57,6 +57,7 @@
         ?>
     </p>
 
+    <!-- Подключение скрипта для сохранения операции -->
     <script src="saveSelect.js"></script>
 </div>
 
